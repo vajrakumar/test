@@ -23,8 +23,8 @@
      */
     "frameworks": {
         "ext": {
-            "path":"ext",
-            "version":"6.2.1.167"
+            "path": "ext",
+            "version": "6.2.1.167"
         }
     },
 
@@ -49,5 +49,24 @@
          * This folder contains all extracted (remote) packages.
          */
         "extract": "${workspace.dir}/packages/remote"
+    },
+    "name": "MyApp",
+    "tests": {
+        "browser": {
+            "farms": [
+                {
+                    "name": "Generic WebDriver",
+                    "type": "generic",
+                    "host": "localhost",
+                    "port": 4444,
+                    "pools": [
+                        {
+                            "name": "LocalBrowserpool",
+                            "path": "LocalBrowserpool.json"
+                        }
+                    ]
+                }
+            ]
+        }
     }
 }
